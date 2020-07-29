@@ -1,5 +1,5 @@
 [package]
-name = "azure-playground-rust"
+name = "azure_playground_rust"
 version = "0.1.0"
 authors = ["Andy Bell <andy.bell@displaynote.com>"]
 edition = "2018"
