@@ -5,9 +5,7 @@ use azure_sdk_core::prelude::*;
 use azure_sdk_storage_blob::prelude::*;
 use azure_sdk_storage_core::prelude::*;
 
-#[tokio::main]
-pub async fn main() {
-
+async fn upload() -> bool {
     println!("We are going to upload a file to azure");
     let account = env::var("STORAGE_ACCOUNT").expect("Set env variable STORAGE_ACCOUNT first!");
     println!("using account -> {}", account);
@@ -36,4 +34,13 @@ pub async fn main() {
         Ok(response) => println!("response:{:?}", response),
         Err(err) => println!("error:{:?}", err),
     };
+
+    true
+}
+
+#[tokio::main]
+pub async fn main() {
+
+    upload().await;
+    
 }
